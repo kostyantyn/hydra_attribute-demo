@@ -1,0 +1,10 @@
+.col-md-12
+
+  %nav.navbar.navbar-default
+    .navbar-header
+      = link_to 'Brand', root_path, class: 'navbar-brand'
+
+    .collapse.navbar-collapse.navbar-ex1-collapse
+      %ul.nav.navbar-nav
+        %li.active= link_to 'Categories', categories_path
+        %li= link_to 'Products', products_path

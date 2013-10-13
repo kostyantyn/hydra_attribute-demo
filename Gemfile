@@ -22,6 +22,10 @@ end
 
 gem 'jquery-rails'
 gem 'hydra_attribute', '0.5.0.rc1'
+gem 'haml-rails'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: 'master'
+gem 'kaminari'
+gem 'rspec-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

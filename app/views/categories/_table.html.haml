@@ -1,0 +1,23 @@
+%table.table.table-striped.table-bordered
+  %thead
+    %tr
+      %th= Category.human_attribute_name(:id)
+      %th= Category.human_attribute_name(:name)
+      %th= Category.human_attribute_name(:created_at)
+      %th= Category.human_attribute_name(:updated_at)
+      %th
+  %tbody
+    - categories.each do |category|
+      %tr
+        %td= category.id
+        %td= category.name
+        %td= l category.created_at, format: :long
+        %td= l category.updated_at, format: :long
+        %td
+          = link_to 'show', category_path(category)
+          |
+          = link_to 'edit', edit_category_path(category)
+          |
+          = link_to 'delete', category_path(category), method: 'DELETE', data: {confrim: 'Are you sure?'}
+
+= paginate categories
