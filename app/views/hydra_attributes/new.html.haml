@@ -1,0 +1,23 @@
+.col-md-6
+  = form_for(@hydra_attribute, url: hydra_attributes_path, as: :hydra_attribute) do |f|
+    = hidden_field_tag 'entity_type', params[:entity_type]
+    = form_group(f, :name, request.post?) do
+      = f.text_field :name, class: 'form-control'
+    = form_group(f, :backend_type, request.post?) do
+      = f.select :backend_type, HydraAttribute::SUPPORTED_BACKEND_TYPES, {}, class: 'form-control'
+    = form_group(f, :default_value, request.post?) do
+      = check_box_tag 'set_default_hydra_attribute_value', nil, !f.object.default_value.nil?
+      = f.text_field :default_value, class: 'form-control', disabled: f.object.default_value.nil?
+    = form_group(f, :white_list, request.post?) do
+      = f.check_box :white_list
+    .form_group
+      = f.button 'Create Hydra Attribute', class: 'btn btn-default'
+
+:javascript
+  (function() {
+    var defaultValue    = $('#hydra_attribute_default_value');
+    var setDefaultValue = $('#set_default_hydra_attribute_value');
+    setDefaultValue.on('click', function() {
+      defaultValue.attr('disabled', setDefaultValue.is(':not(:checked)'));
+    });
+  })();
