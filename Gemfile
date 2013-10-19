@@ -21,7 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'hydra_attribute', '0.5.0.rc1'
+gem 'hydra_attribute', github: 'kostyantyn/hydra_attribute', branch: 'master'
 gem 'haml-rails'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: 'master'
 gem 'kaminari'
