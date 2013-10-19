@@ -1,0 +1,25 @@
+= form_tag hydra_attributes_path, method: 'GET' do
+  %table.table.table-striped.table-bordered
+    %thead
+      %tr
+        %th= HydraAttribute::HydraAttribute.human_attribute_name(:id)
+        %th= HydraAttribute::HydraAttribute.human_attribute_name(:entity_type)
+        %th= HydraAttribute::HydraAttribute.human_attribute_name(:name)
+        %th= HydraAttribute::HydraAttribute.human_attribute_name(:backend_type)
+        %th= HydraAttribute::HydraAttribute.human_attribute_name(:default_value)
+        %th= HydraAttribute::HydraAttribute.human_attribute_name(:white_list)
+        %th
+      = render 'table_filter'
+    %tbody
+      - hydra_attributes.each do |hydra_attribute|
+        %tr
+          %td= hydra_attribute.id
+          %td= hydra_attribute.entity_type
+          %td= hydra_attribute.name
+          %td= hydra_attribute.backend_type
+          %td= hydra_attribute.default_value.nil? ? 'nil' : %Q("#{hydra_attribute.default_value}")
+          %td= hydra_attribute.white_list
+          %td
+            = link_to 'show', hydra_attribute_path(hydra_attribute), class: 'btn btn-info btn-xs'
+            = link_to 'edit', edit_hydra_attribute_path(hydra_attribute), class: 'btn btn-warning btn-xs'
+            = link_to 'delete', hydra_attribute_path(hydra_attribute), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'

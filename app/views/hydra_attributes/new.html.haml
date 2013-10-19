@@ -11,7 +11,8 @@
     = form_group(f, :white_list, request.post?) do
       = f.check_box :white_list
     .form_group
-      = f.button 'Create Hydra Attribute', class: 'btn btn-default'
+      = f.button 'Create Hydra Attribute', class: 'btn btn-success'
+      = link_to 'Cancel', hydra_attributes_path, class: 'btn btn-primary'
 
 :javascript
   (function() {

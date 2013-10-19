@@ -1,5 +1,5 @@
 Demo::Application.routes.draw do
-  root to: 'categories#index'
+  root to: 'hydra_attributes#index'
 
   resources :categories
   resources :products

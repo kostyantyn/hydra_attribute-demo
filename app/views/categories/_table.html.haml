@@ -14,10 +14,8 @@
         %td= l category.created_at, format: :long
         %td= l category.updated_at, format: :long
         %td
-          = link_to 'show', category_path(category)
-          |
-          = link_to 'edit', edit_category_path(category)
-          |
-          = link_to 'delete', category_path(category), method: 'DELETE', data: {confrim: 'Are you sure?'}
+          = link_to 'show', category_path(category), class: 'btn btn-info btn-xs'
+          = link_to 'edit', edit_category_path(category), class: 'btn btn-warning btn-xs'
+          = link_to 'delete', category_path(category), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'
 
 = paginate categories

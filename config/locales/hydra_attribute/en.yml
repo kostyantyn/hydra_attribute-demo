@@ -1,0 +1,8 @@
+en:
+  activemodel:
+    errors:
+      models:
+        hydra_attribute/hydra_attribute:
+          attributes:
+            name:
+              taken: "is already taken"

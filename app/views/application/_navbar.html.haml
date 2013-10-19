@@ -2,9 +2,15 @@
 
   %nav.navbar.navbar-default
     .navbar-header
-      = link_to 'Brand', root_path, class: 'navbar-brand'
+      = link_to "HydraAttribute v#{HydraAttribute::VERSION}", root_path, class: 'navbar-brand'
 
     .collapse.navbar-collapse.navbar-ex1-collapse
       %ul.nav.navbar-nav
-        %li.active= link_to 'Categories', categories_path
-        %li= link_to 'Products', products_path
+        %li{class: controller_name == 'hydra_attributes' ? 'active' : ''}= link_to 'HydraAttributes', hydra_attributes_path
+        %li.dropdown{class: controller_name.in?(%w[categories products]) ? 'active' : ''}
+          %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
+            Entities
+            %b.caret
+          %ul.dropdown-menu
+            %li{class: controller_name == 'categories' ? 'active' : ''}= link_to 'Categories', categories_path
+            %li{class: controller_name == 'products' ? 'active' : ''}= link_to 'Products', products_path
