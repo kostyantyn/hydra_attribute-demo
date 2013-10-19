@@ -1,6 +1,4 @@
 class HydraAttributesController < ApplicationController
-  ENTITY_TYPES = %w[Category Product].freeze
-
   before_filter :find_entity_class, only: [:new, :create]
 
   def index
@@ -22,7 +20,7 @@ class HydraAttributesController < ApplicationController
 
   private
     def find_entity_class
-      return redirect_to(root_path) unless params[:entity_type].in?(ENTITY_TYPES)
+      return redirect_to(root_path) unless params[:entity_type].in?(hydra_entity_types)
       @entity_class = params[:entity_type].constantize
     end
 
@@ -32,7 +30,7 @@ class HydraAttributesController < ApplicationController
 
     def search_query
       query = {}
-      if params[:entity_type].in?(ENTITY_TYPES)
+      if params[:entity_type].in?(hydra_entity_types)
         query[:entity_type] = params[:entity_type]
       end
       if params[:name].present?

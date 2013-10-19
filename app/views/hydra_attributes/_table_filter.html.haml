@@ -1,7 +1,7 @@
 %tr
   %th
   %th{style: 'padding:2px;'}
-    = select_tag 'entity_type', options_for_select(HydraAttributesController::ENTITY_TYPES, params[:entity_type]), include_blank: true, class: 'form-control input-sm'
+    = select_tag 'entity_type', options_for_select(hydra_entity_types, params[:entity_type]), include_blank: true, class: 'form-control input-sm'
   %th{style: 'padding:2px;'}
     = text_field_tag 'name', params[:name], class: 'form-control input-sm'
   %th{style: 'padding:2px;'}
