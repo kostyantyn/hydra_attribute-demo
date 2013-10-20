@@ -1,0 +1,4 @@
+- if flash.any?
+  .col-md-12
+    - flash.each do |type, message|
+      .alert{class: "alert-#{type}"}= message

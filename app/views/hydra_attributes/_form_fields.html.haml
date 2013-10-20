@@ -1,0 +1,9 @@
+= form_group(f, :name, request.post?) do
+  = f.text_field :name, class: 'form-control'
+= form_group(f, :backend_type, request.post?) do
+  = f.select :backend_type, HydraAttribute::SUPPORTED_BACKEND_TYPES, {}, class: 'form-control'
+= form_group(f, :default_value, request.post?) do
+  = check_box_tag 'set_default_hydra_attribute_value', nil, !f.object.default_value.nil?
+  = f.text_field :default_value, class: 'form-control', disabled: f.object.default_value.nil?
+= form_group(f, :white_list, request.post?) do
+  = f.check_box :white_list
