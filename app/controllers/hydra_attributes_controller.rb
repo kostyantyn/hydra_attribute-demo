@@ -32,7 +32,7 @@ class HydraAttributesController < ApplicationController
 
   def update
     # TODO add #update_attributes
-    @hydra_attribute.assign_attributes(hydra_attribute_params)
+    @hydra_attribute.assign_attributes(hydra_attribute_params.except(:entity_type))
     if @hydra_attribute.save
       flash[:success] = %Q(HydraAttribute "#{@hydra_attribute.name}" was updated successfully)
     else
