@@ -1,0 +1,7 @@
+.panel.panel-default
+  .panel-body
+    = form_tag(new_hydra_set_path, method: 'GET', class: 'form-inline') do
+      = label_tag 'entity_type', 'Select Entity Type:'
+      .form-group
+        = select_tag 'entity_type', options_for_select(hydra_entity_types), class: 'form-control'
+      = button_tag 'New HydraSet', class: 'btn btn-primary', name: nil

@@ -1,0 +1,19 @@
+= form_tag hydra_sets_path, method: 'GET' do
+  %table.table.table-striped.table-bordered
+    %thead
+      %tr
+        %th= HydraAttribute::HydraSet.human_attribute_name(:id)
+        %th= HydraAttribute::HydraSet.human_attribute_name(:entity_type)
+        %th= HydraAttribute::HydraSet.human_attribute_name(:name)
+        %th
+      = render 'table_filter'
+    %tbody
+      - hydra_sets.each do |hydra_set|
+        %tr
+          %td= hydra_set.id
+          %td= hydra_set.entity_type
+          %td= hydra_set.name
+          %td
+            = link_to 'show', hydra_set_path(hydra_set), class: 'btn btn-info btn-xs'
+            = link_to 'edit', edit_hydra_set_path(hydra_set), class: 'btn btn-warning btn-xs'
+            = link_to 'delete', hydra_set_path(hydra_set), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'

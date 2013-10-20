@@ -4,4 +4,5 @@ Demo::Application.routes.draw do
   resources :categories
   resources :products
   resources :hydra_attributes
+  resources :hydra_sets
 end

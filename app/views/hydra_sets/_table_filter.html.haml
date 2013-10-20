@@ -1,0 +1,9 @@
+%tr
+  %th
+  %th{style: 'padding:2px;'}
+    = select_tag 'entity_type', options_for_select(hydra_entity_types, params[:entity_type]), include_blank: true, class: 'form-control input-sm'
+  %th{style: 'padding:2px;'}
+    = text_field_tag 'name', params[:name], class: 'form-control input-sm'
+  %th{style: 'padding:2px;'}
+    = button_tag 'search', name: nil, class: 'btn btn-success btn-sm'
+    = link_to content_tag(:span, '', class: 'glyphicon glyphicon-remove-circle'), hydra_sets_path, class: 'btn btn-primary btn-sm'

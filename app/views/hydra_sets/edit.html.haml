@@ -1,0 +1,10 @@
+.col-md-6
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Update HydraSet
+    .panel-body
+      = form_for(@hydra_set, url: hydra_set_path(@hydra_set), as: :hydra_set) do |f|
+        = render 'form_fields', f: f
+        .form_group
+          = f.button 'Update', class: 'btn btn-success'
+          = link_to 'Cancel', hydra_set_path, class: 'btn btn-primary'
