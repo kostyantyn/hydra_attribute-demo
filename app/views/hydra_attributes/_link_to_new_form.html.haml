@@ -1,7 +1,9 @@
-.panel.panel-default
-  .panel-body
-    = form_tag(new_hydra_attribute_path, method: 'GET', class: 'form-inline') do
-      = label_tag 'entity_type', 'Select Entity Type:'
-      .form-group
-        = select_tag 'entity_type', options_for_select(hydra_entity_types), class: 'form-control'
-      = button_tag 'New Hydra Attribute', class: 'btn btn-primary', name: nil
+%table.table.table-bordered.table-condensed
+  %tbody
+    %tr
+      %td
+        = form_tag(new_hydra_attribute_path, method: 'GET', class: 'form-inline') do
+          = label_tag 'entity_type', 'Select Entity Type:'
+          .form-group
+            = select_tag 'entity_type', options_for_select(hydra_entity_types), class: 'form-control input-sm'
+          = button_tag 'New HydraAttribute', class: 'btn btn-primary btn-sm', name: nil

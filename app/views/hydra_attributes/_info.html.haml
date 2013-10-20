@@ -21,3 +21,7 @@
       %dd= l hydra_attribute.created_at, format: :long
       %dt= HydraAttribute::HydraAttribute.human_attribute_name(:updated_at)
       %dd= l hydra_attribute.updated_at, format: :long
+      %dt
+      %dd
+        = link_to 'edit', edit_hydra_attribute_path(hydra_attribute), class: 'btn btn-warning btn-xs'
+        = link_to 'delete', hydra_attribute_path(hydra_attribute), class: 'btn btn-danger btn-xs', method: 'DELETE', data: {confirm: 'Are you sure?'}

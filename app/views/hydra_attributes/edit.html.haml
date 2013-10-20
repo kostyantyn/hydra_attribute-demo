@@ -1,3 +1,9 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'HydraAttributes', hydra_attributes_path
+    %li= link_to @hydra_attribute.name, hydra_attribute_path(@hydra_attribute)
+    %li.active Edit
+
 .col-md-6
   .panel.panel-default
     .panel-heading

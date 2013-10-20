@@ -1,3 +1,9 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'HydraSets', hydra_sets_path
+    %li= link_to @hydra_set.name, hydra_set_path(@hydra_set)
+    %li.active Edit
+
 .col-md-6
   .panel.panel-default
     .panel-heading
