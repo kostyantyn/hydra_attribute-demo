@@ -1,0 +1,24 @@
+.col-md-5
+  = render 'hydra_attributes/info', hydra_attribute: @hydra_attribute
+
+.col-md-7
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Update HydraSet List
+    .panel-body
+      = form_tag(update_hydra_set_relations_hydra_attribute_hydra_attribute_sets_path(@hydra_attribute), method: 'POST') do
+        %table.table.table-condensed
+          %thead
+            %tr
+              %th
+              %th= HydraAttribute::HydraAttribute.human_attribute_name(:id)
+              %th= HydraAttribute::HydraAttribute.human_attribute_name(:name)
+          %tbody
+            - @hydra_sets.each do |hydra_set|
+              %tr
+                %td= check_box_tag 'hydra_set_ids[]', hydra_set.id, hydra_set.has_hydra_attribute_id?(@hydra_attribute.id)
+                %td= hydra_set.id
+                %td= hydra_set.name
+
+        = button_tag 'Update', class: 'btn btn-success btn-sm'
+        = link_to 'Cancel', hydra_attribute_path(@hydra_attribute), class: 'btn btn-primary btn-sm'

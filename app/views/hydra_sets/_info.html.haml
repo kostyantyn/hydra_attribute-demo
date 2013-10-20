@@ -1,0 +1,21 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      HydraSet:
+      = hydra_set.name
+  .panel-body
+    %dl.dl-horizontal
+      %dt= HydraAttribute::HydraSet.human_attribute_name(:id)
+      %dd= hydra_set.id
+      %dt= HydraAttribute::HydraSet.human_attribute_name(:entity_type)
+      %dd= hydra_set.entity_type
+      %dt= HydraAttribute::HydraSet.human_attribute_name(:name)
+      %dd= hydra_set.name
+      %dt= HydraAttribute::HydraSet.human_attribute_name(:created_at)
+      %dd= l hydra_set.created_at, format: :long
+      %dt= HydraAttribute::HydraSet.human_attribute_name(:updated_at)
+      %dd= l hydra_set.updated_at, format: :long
+      %dt
+      %dd
+        = link_to 'edit', edit_hydra_set_path(hydra_set), class: 'btn btn-warning btn-xs'
+        = link_to 'delete', hydra_set_path(hydra_set), class: 'btn btn-danger btn-xs', method: 'DELETE', data: {confirm: 'Are you sure?'}

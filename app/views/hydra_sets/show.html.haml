@@ -1,18 +1,5 @@
-.col-md-6
-  .panel.panel-default
-    .panel-heading
-      %h3.panel-title
-        HydraSet:
-        = @hydra_set.name
-    .panel-body
-      %dl.dl-horizontal
-        %dt= HydraAttribute::HydraSet.human_attribute_name(:id)
-        %dd= @hydra_set.id
-        %dt= HydraAttribute::HydraSet.human_attribute_name(:entity_type)
-        %dd= @hydra_set.entity_type
-        %dt= HydraAttribute::HydraSet.human_attribute_name(:name)
-        %dd= @hydra_set.name
-        %dt= HydraAttribute::HydraSet.human_attribute_name(:created_at)
-        %dd= l @hydra_set.created_at, format: :long
-        %dt= HydraAttribute::HydraSet.human_attribute_name(:updated_at)
-        %dd= l @hydra_set.updated_at, format: :long
+.col-md-5
+  = render 'info', hydra_set: @hydra_set
+
+.col-md-7
+  = render 'hydra_attributes', hydra_set: @hydra_set, hydra_attributes: @hydra_set.hydra_attributes

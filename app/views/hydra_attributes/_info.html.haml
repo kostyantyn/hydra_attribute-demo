@@ -1,0 +1,23 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      HydraAttribute:
+      = hydra_attribute.name
+  .panel-body
+    %dl.dl-horizontal
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:id)
+      %dd= hydra_attribute.id
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:entity_type)
+      %dd= hydra_attribute.entity_type
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:name)
+      %dd= hydra_attribute.name
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:backend_type)
+      %dd= hydra_attribute.backend_type
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:default_value)
+      %dd= default_hydra_attribute_value(hydra_attribute)
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:white_list)
+      %dd= hydra_attribute.white_list
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:created_at)
+      %dd= l hydra_attribute.created_at, format: :long
+      %dt= HydraAttribute::HydraAttribute.human_attribute_name(:updated_at)
+      %dd= l hydra_attribute.updated_at, format: :long

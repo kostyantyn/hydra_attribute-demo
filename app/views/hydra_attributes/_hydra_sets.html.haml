@@ -1,0 +1,17 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title HydraSets
+  .panel-body
+    - if hydra_sets.any?
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th= HydraAttribute::HydraSet.human_attribute_name(:id)
+            %th= HydraAttribute::HydraSet.human_attribute_name(:name)
+        %tbody
+          - hydra_sets.each do |hydra_set|
+            %tr
+              %td= hydra_set.id
+              %td= hydra_set.name
+
+    = link_to 'Assign to HydraSets', edit_hydra_set_relations_hydra_attribute_hydra_attribute_sets_path(hydra_attribute.id), class: 'btn btn-warning btn-sm'

@@ -5,6 +5,7 @@
         %th= HydraAttribute::HydraSet.human_attribute_name(:id)
         %th= HydraAttribute::HydraSet.human_attribute_name(:entity_type)
         %th= HydraAttribute::HydraSet.human_attribute_name(:name)
+        %th HydraAttributes
         %th
       = render 'table_filter'
     %tbody
@@ -13,6 +14,7 @@
           %td= hydra_set.id
           %td= hydra_set.entity_type
           %td= hydra_set.name
+          %td= hydra_set.hydra_attributes.count
           %td
             = link_to 'show', hydra_set_path(hydra_set), class: 'btn btn-info btn-xs'
             = link_to 'edit', edit_hydra_set_path(hydra_set), class: 'btn btn-warning btn-xs'

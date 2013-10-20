@@ -1,0 +1,23 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title HydraAttributes
+  .panel-body
+    - if hydra_attributes.any?
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th= HydraAttribute::HydraAttribute.human_attribute_name(:id)
+            %th= HydraAttribute::HydraAttribute.human_attribute_name(:name)
+            %th= HydraAttribute::HydraAttribute.human_attribute_name(:backend_type)
+            %th= HydraAttribute::HydraAttribute.human_attribute_name(:default_value)
+            %th= HydraAttribute::HydraAttribute.human_attribute_name(:white_list)
+        %tbody
+          - hydra_attributes.each do |hydra_attribute|
+            %tr
+              %td= hydra_attribute.id
+              %td= hydra_attribute.name
+              %td= hydra_attribute.backend_type
+              %td= default_hydra_attribute_value(hydra_attribute)
+              %td= hydra_attribute.white_list
+
+    = link_to 'Edit set of HydraAttributes', edit_hydra_attribute_relations_hydra_set_hydra_attribute_sets_path(hydra_set), class: 'btn btn-warning btn-sm'
