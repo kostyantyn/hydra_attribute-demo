@@ -17,7 +17,7 @@ module HydraAttributesHelper
         when 'string', 'integer', 'float', 'decimal'
           form.text_field name, class: 'form-control', disabled: disabled
         when 'text'
-          form.text_area name, class: 'form-control', disabled: disabled
+          form.text_area name, class: 'form-control', rows: 3, disabled: disabled
         when 'boolean'
           form.check_box name, disabled: disabled
         when 'datetime'
