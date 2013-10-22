@@ -1,0 +1,15 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'Categories', categories_path
+    %li.active= @category.name
+
+.col-md-6
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= @category.name
+    .panel-body
+      %dl.dl-horizontal
+        - [:id, :hydra_set_id, *@category.hydra_attributes.keys].each do |attribute_name|
+          %dt= Category.human_attribute_name(attribute_name)
+          %dd= @category.send(attribute_name)
+

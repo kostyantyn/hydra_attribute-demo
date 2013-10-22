@@ -1,0 +1,16 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'Categories', categories_path
+    %li= link_to @category.name, category_path(@category)
+    %li.active Edit
+
+.col-md-6
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Edit Category
+    .panel-body
+      = form_for(@category) do |f|
+        = render 'form_fields', f: f
+        .form_group
+          = f.button 'Update', class: 'btn btn-success'
+          = link_to 'Cancel', category_path(@category), class: 'btn btn-primary'
