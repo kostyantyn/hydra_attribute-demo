@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_filter :find_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.page(params[:page])
+    @categories = Category.page(params[:page]).search(params)
     respond_with(@categories)
   end
 

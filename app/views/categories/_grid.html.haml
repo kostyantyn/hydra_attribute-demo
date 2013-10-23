@@ -1,0 +1,17 @@
+- categories.each_slice(2).each do |grouped_categories|
+  .row
+    - grouped_categories.each do |category|
+      .col-md-6
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title= category.name
+          .panel-body
+            %ul.list-unstyled
+              - [:id, :hydra_set_id, *category.hydra_attributes.keys].each do |attribute|
+                %li
+                  %strong= "#{attribute}:"
+                  %span= category.send(attribute)
+            %p
+              = link_to 'show', category_path(category), class: 'btn btn-info btn-xs'
+              = link_to 'edit', edit_category_path(category), class: 'btn btn-warning btn-xs'
+              = link_to 'delete', category_path(category), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'

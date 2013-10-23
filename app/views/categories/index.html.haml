@@ -2,6 +2,14 @@
   %ol.breadcrumb
     %li.active Categories
 
-.col-md-12
+.col-md-3
+  = render 'filter'
+
+.col-md-9
   %p= link_to 'New Category', new_category_path, class: 'btn btn-primary btn-sm'
-  = render 'table', categories: @categories
+  - if @categories.any?
+    - if params[:view] == 'grid'
+      = render 'grid', categories: @categories
+    - else
+      = render 'table', categories: @categories
+  = paginate @categories

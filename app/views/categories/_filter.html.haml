@@ -1,0 +1,24 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title Filter
+  .panel-body
+    = form_tag categories_path, method: 'GET' do
+      = hidden_field_tag 'page', params[:page]
+      = hidden_field_tag 'view', 'grid'
+      - Category.hydra_attributes.each do |hydra_attribute|
+        .form-group
+          = label_tag hydra_attribute.name, hydra_attribute.name
+          - case hydra_attribute.backend_type
+          - when 'integer', 'float', 'decimal'
+            %table
+              %tr
+                %td= text_field_tag "#{hydra_attribute.name}__from", params["#{hydra_attribute.name}__from"], class: 'form-control input-sm', placeholder: 'From'
+                %td= text_field_tag "#{hydra_attribute.name}__to", params["#{hydra_attribute.name}__to"], class: 'form-control input-sm', placeholder: 'To'
+          - when 'boolean'
+            = check_box_tag hydra_attribute.name, '1', params[hydra_attribute.name] == '1'
+          - else
+            = text_field_tag hydra_attribute.name, params[hydra_attribute.name], class: 'form-control input-sm'
+
+      .form_group
+        = button_tag 'Search', name: nil, class: 'btn btn-success btn-sm'
+        = link_to 'Reset', categories_path, class: 'btn btn-primary btn-sm'
