@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/kostyantyn/hydra_attribute.git
-  revision: 8a63e3163a902dce2648de7d38fe8cb2ccd8b663
+  revision: 784a00d01c1950297f85ec371771af7fb38149a7
   branch: master
   specs:
     hydra_attribute (0.5.0.rc1)
@@ -8,10 +8,10 @@ GIT
 
 GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: 6cc04bda62ed7ccf71d445fa82e706cb696b4fdb
+  revision: e551ce0a8f3df19ebbac3fe053d4c2ba72d76a22
   branch: master
   specs:
-    bootstrap-sass (3.0.0.0)
+    bootstrap-sass (3.0.0.0.rc)
       sass (~> 3.2)
 
 GEM

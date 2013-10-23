@@ -8,16 +8,18 @@
       - Category.hydra_attributes.each do |hydra_attribute|
         .form-group
           = label_tag hydra_attribute.name, hydra_attribute.name
+          = check_box_tag "#{hydra_attribute.name}__enabled", '1', params["#{hydra_attribute.name}__enabled"].present?, data: {enable_filter: true, name: hydra_attribute.name, numbered: hydra_attribute.backend_type.in?(%w[integer float decimal])}
+
           - case hydra_attribute.backend_type
           - when 'integer', 'float', 'decimal'
             %table
               %tr
-                %td= text_field_tag "#{hydra_attribute.name}__from", params["#{hydra_attribute.name}__from"], class: 'form-control input-sm', placeholder: 'From'
-                %td= text_field_tag "#{hydra_attribute.name}__to", params["#{hydra_attribute.name}__to"], class: 'form-control input-sm', placeholder: 'To'
+                %td= text_field_tag "#{hydra_attribute.name}__from", params["#{hydra_attribute.name}__from"], class: 'form-control input-sm', placeholder: 'From', disabled: params["#{hydra_attribute.name}__enabled"].blank?
+                %td= text_field_tag "#{hydra_attribute.name}__to", params["#{hydra_attribute.name}__to"], class: 'form-control input-sm', placeholder: 'To', disabled: params["#{hydra_attribute.name}__enabled"].blank?
           - when 'boolean'
-            = check_box_tag hydra_attribute.name, '1', params[hydra_attribute.name] == '1'
+            = select_tag hydra_attribute.name, options_for_select([['YES', 1], ['NO', 0]], params[hydra_attribute.name]), class: 'form-control input-sm', disabled: params["#{hydra_attribute.name}__enabled"].blank?
           - else
-            = text_field_tag hydra_attribute.name, params[hydra_attribute.name], class: 'form-control input-sm'
+            = text_field_tag hydra_attribute.name, params[hydra_attribute.name], class: 'form-control input-sm', disabled: params["#{hydra_attribute.name}__enabled"].blank?
 
       .form_group
         = button_tag 'Search', name: nil, class: 'btn btn-success btn-sm'

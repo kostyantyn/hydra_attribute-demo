@@ -13,8 +13,8 @@
         %td= category.id
         %td= category.hydra_set_id
         %td= category.name
-        %td= l category.created_at, format: :long
-        %td= l category.updated_at, format: :long
+        %td= l category.created_at, format: :short
+        %td= l category.updated_at, format: :short
         %td
           = link_to 'show', category_path(category), class: 'btn btn-info btn-xs'
           = link_to 'edit', edit_category_path(category), class: 'btn btn-warning btn-xs'

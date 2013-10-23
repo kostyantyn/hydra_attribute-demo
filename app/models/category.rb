@@ -18,8 +18,10 @@ class Category < ActiveRecord::Base
               query = query.where(name => params["#{name}__from"])
             end
           end
-        when 'boolean'
-          query = query.where(name => ActiveRecord::ConnectionAdapters::Column.value_to_boolean(params[name]))
+          when 'boolean'
+            if params[name].present?
+              query = query.where(name => ActiveRecord::ConnectionAdapters::Column.value_to_boolean(params[name]))
+            end
         else
           if params[name].present?
             query = query.where(name => params[name])
