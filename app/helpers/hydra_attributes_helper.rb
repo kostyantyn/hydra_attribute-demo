@@ -19,7 +19,7 @@ module HydraAttributesHelper
         when 'text'
           form.text_area name, class: 'form-control', rows: 3, disabled: disabled
         when 'boolean'
-          form.check_box name, disabled: disabled
+          form.select name, options_for_select([['YES', true], ['NO', false]], hydra_value.value), {included_blank: false}, {class: 'form-control', disabled: disabled}
         when 'datetime'
           form.datetime_select name, {}, disabled: disabled
         else
