@@ -1,0 +1,15 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'Products', products_path
+    %li.active New
+
+.col-md-6
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title New Product
+    .panel-body
+      = form_for(@product) do |f|
+        = render 'form_fields', f: f
+        .form_group
+          = f.button 'Create', class: 'btn btn-success'
+          = link_to 'Cancel', products_path, class: 'btn btn-primary'

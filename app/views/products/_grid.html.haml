@@ -1,0 +1,17 @@
+- products.each_slice(2).each do |grouped_products|
+  .row
+    - grouped_products.each do |product|
+      .col-md-6
+        .panel.panel-default
+          .panel-heading
+            %h3.panel-title= product.name
+          .panel-body
+            %ul.list-unstyled
+              - [:id, :sku, :hydra_set_id, *product.hydra_attributes.keys].each do |attribute|
+                %li
+                  %strong= "#{attribute}:"
+                  %span= product.send(attribute)
+            %p
+              = link_to 'show', product_path(product), class: 'btn btn-info btn-xs'
+              = link_to 'edit', edit_product_path(product), class: 'btn btn-warning btn-xs'
+              = link_to 'delete', product_path(product), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'

@@ -1,0 +1,15 @@
+.col-md-12
+  %ol.breadcrumb
+    %li.active Products
+
+.col-md-3
+  = render 'filter', entity_class: Product, endpoint_path: products_path
+
+.col-md-9
+  %p= link_to 'New Product', new_product_path, class: 'btn btn-primary btn-sm'
+  - if @products.any?
+    - if params[:view] == 'grid'
+      = render 'grid', products: @products
+    - else
+      = render 'table', products: @products
+  = paginate @products

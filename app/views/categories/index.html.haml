@@ -3,7 +3,7 @@
     %li.active Categories
 
 .col-md-3
-  = render 'filter'
+  = render 'filter', entity_class: Category, endpoint_path: categories_path
 
 .col-md-9
   %p= link_to 'New Category', new_category_path, class: 'btn btn-primary btn-sm'

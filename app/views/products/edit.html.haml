@@ -1,0 +1,16 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'Products', products_path
+    %li= link_to @product.name, product_path(@product)
+    %li.active Edit
+
+.col-md-6
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Edit Product
+    .panel-body
+      = form_for(@product) do |f|
+        = render 'form_fields', f: f
+        .form_group
+          = f.button 'Update', class: 'btn btn-success'
+          = link_to 'Cancel', product_path(@product), class: 'btn btn-primary'

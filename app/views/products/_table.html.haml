@@ -1,0 +1,25 @@
+%table.table.table-striped.table-bordered.table-condensed
+  %thead
+    %tr
+      %th= Product.human_attribute_name(:id)
+      %th= Product.human_attribute_name(:sku)
+      %th= Product.human_attribute_name(:hydra_set_id)
+      %th= Product.human_attribute_name(:name)
+      %th= Product.human_attribute_name(:created_at)
+      %th= Product.human_attribute_name(:updated_at)
+      %th
+  %tbody
+    - products.each do |product|
+      %tr
+        %td= product.id
+        %td= product.sku
+        %td
+          - if product.hydra_set_id?
+            =link_to product.hydra_set.name, hydra_set_path(product.hydra_set_id)
+        %td= product.name
+        %td= l product.created_at, format: :short
+        %td= l product.updated_at, format: :short
+        %td
+          = link_to 'show', product_path(product), class: 'btn btn-info btn-xs'
+          = link_to 'edit', edit_product_path(product), class: 'btn btn-warning btn-xs'
+          = link_to 'delete', product_path(product), method: 'DELETE', data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs'

@@ -11,7 +11,9 @@
     - categories.each do |category|
       %tr
         %td= category.id
-        %td= category.hydra_set_id
+        %td
+          - if category.hydra_set_id?
+            = link_to category.hydra_set.name, hydra_set_path(category.hydra_set_id)
         %td= category.name
         %td= l category.created_at, format: :short
         %td= l category.updated_at, format: :short

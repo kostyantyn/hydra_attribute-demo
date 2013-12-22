@@ -1,0 +1,22 @@
+.col-md-12
+  %ol.breadcrumb
+    %li= link_to 'Products', products_path
+    %li.active= @product.name
+
+.col-md-6
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title= @product.name
+    .panel-body
+      %dl.dl-horizontal
+        - [:id, :sku, :hydra_set_id, *@product.hydra_attributes.keys].each do |attribute_name|
+          %dt= Product.human_attribute_name(attribute_name)
+          %dd= @product.send(attribute_name)
+        %dt= Product.human_attribute_name(:created_at)
+        %dd= l @product.created_at, format: :long
+        %dt= Product.human_attribute_name(:updated_at)
+        %dd= l @product.updated_at, format: :long
+        %dt
+        %dd
+          = link_to 'edit', edit_product_path(@product), class: 'btn btn-warning btn-xs'
+          = link_to 'delete', product_path(@product), class: 'btn btn-danger btn-xs', method: 'DELETE', data: {confirm: 'Are you sure?'}

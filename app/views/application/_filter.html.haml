@@ -2,10 +2,10 @@
   .panel-heading
     %h3.panel-title Filter
   .panel-body
-    = form_tag categories_path, method: 'GET' do
+    = form_tag endpoint_path, method: 'GET' do
       = hidden_field_tag 'page', params[:page]
       = hidden_field_tag 'view', 'grid'
-      - Category.hydra_attributes.each do |hydra_attribute|
+      - entity_class.hydra_attributes.each do |hydra_attribute|
         .form-group
           = label_tag hydra_attribute.name, hydra_attribute.name
           = check_box_tag "#{hydra_attribute.name}__enabled", '1', params["#{hydra_attribute.name}__enabled"].present?, data: {enable_filter: true, name: hydra_attribute.name, numbered: hydra_attribute.backend_type.in?(%w[integer float decimal])}
@@ -23,4 +23,4 @@
 
       .form_group
         = button_tag 'Search', name: nil, class: 'btn btn-success btn-sm'
-        = link_to 'Reset', categories_path, class: 'btn btn-primary btn-sm'
+        = link_to 'Reset', endpoint_path, class: 'btn btn-primary btn-sm'

@@ -3,4 +3,4 @@
 = form_group(f, :hydra_set_id, request.post?) do
   = f.select :hydra_set_id, Category.hydra_sets.map{ |hydra_set| [hydra_set.name, hydra_set.id] }, {include_blank: true}, class: 'form-control'
 
-= hydra_attribute_fields_for(f.object, f)
+= hydra_attribute_fields_for(f.object, f, request.post?)
