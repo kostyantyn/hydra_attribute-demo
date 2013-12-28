@@ -1,0 +1,66 @@
+{
+  "sources": {
+    "powershell": {
+      "locked_version": "1.1.2"
+    },
+    "git": {
+      "locked_version": "2.9.0"
+    },
+    "mysql": {
+      "locked_version": "4.0.14"
+    },
+    "nginx": {
+      "locked_version": "2.2.0"
+    },
+    "rvm": {
+      "locked_version": "0.9.1",
+      "git": "git://github.com/fnichol/chef-rvm.git",
+      "ref": "0cd320911c1e568cbf2eeac895a5ef06e5821589"
+    },
+    "windows": {
+      "locked_version": "1.12.2"
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4"
+    },
+    "dmg": {
+      "locked_version": "2.1.2"
+    },
+    "build-essential": {
+      "locked_version": "1.4.2"
+    },
+    "runit": {
+      "locked_version": "1.5.3"
+    },
+    "yum": {
+      "locked_version": "3.0.2"
+    },
+    "yum-epel": {
+      "locked_version": "0.2.0"
+    },
+    "openssl": {
+      "locked_version": "1.1.0"
+    },
+    "apt": {
+      "locked_version": "2.3.4"
+    },
+    "bluepill": {
+      "locked_version": "2.3.1"
+    },
+    "rsyslog": {
+      "locked_version": "1.10.2"
+    },
+    "ohai": {
+      "locked_version": "1.1.12"
+    },
+    "java": {
+      "locked_version": "1.17.2"
+    },
+    "aws": {
+      "locked_version": "1.0.0"
+    },
+    "chef_gem": {
+      "locked_version": "0.1.0"
+    }
+  }
+}

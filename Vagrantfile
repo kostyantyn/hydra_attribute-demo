@@ -7,6 +7,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder '.', '/var/www/demo', nfs: true
 
   config.vm.network :private_network, ip: '10.0.10.2'
-
-  config.vm.provision :shell, path: 'provision/bootstrap.sh', privileged: false
+  config.vm.network :forwarded_port, host: 8080, guest: 80
 end

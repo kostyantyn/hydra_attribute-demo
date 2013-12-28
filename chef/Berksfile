@@ -1,0 +1,7 @@
+site :opscode
+
+cookbook 'powershell', '~> 1.1.2' # due to the strange bug "ERROR: uninitialized constant Chef::Mixin::PowershellOut"
+cookbook 'git',        '~> 2.9.0'
+cookbook 'mysql',      '~> 4.0.14'
+cookbook 'nginx',      '~> 2.2.0'
+cookbook 'rvm',        github: 'fnichol/chef-rvm'

@@ -29,6 +29,11 @@ gem 'rspec-rails'
 
 gem 'unicorn'
 
+group :development do
+  gem 'knife-solo', '~> 0.4.1'
+  gem 'berkshelf',  '~> 2.0.10'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

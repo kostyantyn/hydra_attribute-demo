@@ -1,0 +1,154 @@
+Fetching source index from https://rubygems.org/
+Using rake (10.1.1) 
+Using i18n (0.6.9) 
+Using multi_json (1.8.2) 
+Using activesupport (3.2.14) 
+Using builder (3.0.4) 
+Using activemodel (3.2.14) 
+Using erubis (2.7.0) 
+Using journey (1.0.4) 
+Using rack (1.4.5) 
+Using rack-cache (1.2) 
+Using rack-test (0.6.2) 
+Using hike (1.2.3) 
+Using tilt (1.4.1) 
+Using sprockets (2.2.2) 
+Using actionpack (3.2.14) 
+Using mime-types (1.25.1) 
+Using polyglot (0.3.3) 
+Using treetop (1.4.15) 
+Using mail (2.5.4) 
+Using actionmailer (3.2.14) 
+Using arel (3.0.3) 
+Using tzinfo (0.3.38) 
+Using activerecord (3.2.14) 
+Using activeresource (3.2.14) 
+Using addressable (2.3.5) 
+Using gyoku (1.1.0) 
+Using mini_portile (0.5.2) 
+Using nokogiri (1.6.1) 
+Using akami (1.2.0) 
+Using buff-ruby_engine (0.1.0) 
+Using buff-shell_out (0.1.1) 
+Using hashie (2.0.5) 
+Using chozo (0.6.1) 
+Using multipart-post (1.2.0) 
+Using faraday (0.8.8) 
+Using minitar (0.5.4) 
+Using rbzip2 (0.2.0) 
+Using retryable (1.3.3) 
+Using buff-extensions (0.5.0) 
+Using varia_model (0.2.0) 
+Using buff-config (0.4.0) 
+Using buff-ignore (1.1.1) 
+Using timers (1.1.0) 
+Using celluloid (0.14.1) 
+Using nio4r (0.5.0) 
+Using celluloid-io (0.14.1) 
+Using json (1.7.7) 
+Using mixlib-log (1.6.0) 
+Using mixlib-authentication (1.3.0) 
+Installing net-http-persistent (2.9) 
+Installing net-ssh (2.7.0) 
+Installing solve (0.8.2) 
+Installing ffi (1.9.3) 
+Installing gssapi (1.0.3) 
+Installing httpclient (2.3.4.1) 
+Installing little-plugger (1.1.3) 
+Installing logging (1.8.1) 
+Installing rubyntlm (0.1.1) 
+Installing httpi (0.9.7) 
+Installing nori (1.1.5) 
+Installing wasabi (1.0.0) 
+Installing savon (0.9.5) 
+Installing uuidtools (2.1.4) 
+Installing winrm (1.1.3) 
+Installing ridley (1.5.3) 
+Installing thor (0.18.1) 
+Installing berkshelf (2.0.10) 
+Installing sass (3.2.13) 
+Using bootstrap-sass (3.0.3.0) from git://github.com/thomas-mcdonald/bootstrap-sass.git (at master) 
+Installing moneta (0.6.0) 
+Installing chef-zero (1.7.2) 
+Installing diff-lcs (1.2.5) 
+Installing highline (1.6.20) 
+Installing mixlib-cli (1.4.0) 
+Installing mixlib-config (2.1.0) 
+Installing mixlib-shellout (1.3.0) 
+Installing net-ssh-gateway (1.2.0) 
+Installing net-ssh-multi (1.1) 
+Installing ipaddress (0.8.0) 
+Installing systemu (2.5.2) 
+Installing yajl-ruby (1.2.0) 
+Installing ohai (6.20.0) 
+Installing coderay (1.1.0) 
+Installing method_source (0.8.2) 
+Installing slop (3.4.7) 
+Installing pry (0.9.12.4) 
+Installing puma (1.6.3) 
+Installing rest-client (1.6.7) 
+Installing chef (11.8.2) 
+Installing coffee-script-source (1.6.3) 
+Installing execjs (2.0.2) 
+Installing coffee-script (2.2.0) 
+Installing rack-ssl (1.3.3) 
+Installing rdoc (3.12.2) 
+Installing railties (3.2.14) 
+Installing coffee-rails (3.2.2) 
+Installing haml (4.0.4) 
+Installing haml-rails (0.4) 
+Using hydra_attribute (0.5.0.rc1) from git://github.com/kostyantyn/hydra_attribute.git (at master) 
+Installing jquery-rails (3.0.4) 
+Installing kaminari (0.15.0) 
+Installing kgio (2.8.1) 
+Installing knife-solo (0.4.1) 
+Installing libv8 (3.16.14.3) 
+Using bundler (1.3.5) 
+Installing rails (3.2.14) 
+Installing raindrops (0.12.0) 
+Installing ref (1.0.5) 
+Installing rspec-core (2.14.7) 
+Installing rspec-expectations (2.14.4) 
+Installing rspec-mocks (2.14.4) 
+Installing rspec-rails (2.14.0) 
+Installing sass-rails (3.2.6) 
+Installing sqlite3 (1.3.8) 
+Installing therubyracer (0.12.0) 
+Installing uglifier (2.2.1) 
+Installing unicorn (4.7.0) 
+Your bundle is complete!
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Post-install message from rdoc:
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+<= 1.8.6 : unsupported
+ = 1.8.7 : gem install rdoc-data; rdoc-data --install
+ = 1.9.1 : gem install rdoc-data; rdoc-data --install
+>= 1.9.2 : nothing to do! Yay!
+Post-install message from haml:
+
+HEADS UP! Haml 4.0 has many improvements, but also has changes that may break
+your application:
+
+* Support for Ruby 1.8.6 dropped
+* Support for Rails 2 dropped
+* Sass filter now always outputs <style> tags
+* Data attributes are now hyphenated, not underscored
+* html2haml utility moved to the html2haml gem
+* Textile and Maruku filters moved to the haml-contrib gem
+
+For more info see:
+
+http://rubydoc.info/github/haml/haml/file/CHANGELOG.md
+
+Post-install message from knife-solo:
+Thanks for installing knife-solo!
+
+If you run into any issues please let us know at:
+  https://github.com/matschaffer/knife-solo/issues
+
+If you are upgrading knife-solo please uninstall any old versions by
+running `gem clean knife-solo` to avoid any errors.
+
+See http://bit.ly/CHEF-3255 for more information on the knife bug
+that causes this.

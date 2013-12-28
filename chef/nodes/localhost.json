@@ -1,0 +1,29 @@
+{
+  "run_list": [
+    "role[webserver]"
+  ],
+  "mysql": {
+    "server_root_password"  : "root",
+    "server_repl_password"  : "root",
+    "server_debian_password": "root"
+  },
+  "nginx": {
+    "default_site_enabled": false,
+    "source"              : {
+      "modules": ["http_gzip_static_module", "http_ssl_module"]
+    }
+  },
+  "rvm": {
+    "rvmrc"        : {
+      "rvm_autolibs_flag": "disabled"
+    },
+    "user_installs": [{
+      "user"         : "vagrant",
+      "rubies"       : ["ruby-1.9.3-p484"],
+      "default_ruby" : "ruby-1.9.3-p484@rails3",
+      "global_gems"  : [
+        {"name": "bundler"}
+      ]
+    }]
+  }
+}

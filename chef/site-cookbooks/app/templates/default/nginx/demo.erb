@@ -1,0 +1,18 @@
+upstream unicorn {
+  server unix:/var/www/demo/tmp/sockets/unicorn.sock fail_timeout=0;
+}
+
+server {
+  listen       80;
+  listen       localhost;
+  keepalive_timeout 5;
+
+  location / {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    # this is required for HTTPS:
+    # proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    proxy_pass http://unicorn;
+  }
+}
