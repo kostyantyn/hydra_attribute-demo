@@ -1,4 +1,4 @@
-# hydra attribute (demo website)
+# Demo Rails App for [hydra_attribute](https://github.com/kostyantyn/hydra_attribute)
 
 ## Installation
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
