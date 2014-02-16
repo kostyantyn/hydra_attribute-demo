@@ -1,1 +1,1 @@
-run "cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile:primary --trace"
+run "cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile --trace"
