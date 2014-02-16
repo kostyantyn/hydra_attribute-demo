@@ -2,11 +2,11 @@
   "run_list": [
     "role[webserver]"
   ],
-  "environment": "development",
+  "environment": "production",
   "mysql": {
-    "server_root_password"  : "root",
-    "server_repl_password"  : "root",
-    "server_debian_password": "root"
+    "server_root_password"  : "AdsaW!k213s",
+    "server_repl_password"  : "AdsaW!k213s",
+    "server_debian_password": "AdsaW!k213s"
   },
   "nginx": {
     "default_site_enabled": false,
