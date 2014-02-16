@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/kostyantyn/hydra_attribute.git
-  revision: 51d4dde384144f907f34b22713d2289cdc438aac
-  branch: master
-  specs:
-    hydra_attribute (0.5.0.rc1)
-      activerecord (~> 3.2)
-
-GIT
   remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
   revision: 0d9e96b152f9e7689dc04db90890309315b92176
   branch: master
@@ -64,6 +56,8 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
+    hydra_attribute (0.5.0)
+      activerecord (~> 3.2)
     i18n (0.6.9)
     journey (1.0.4)
     jquery-rails (3.0.4)
@@ -154,7 +148,7 @@ DEPENDENCIES
   bootstrap-sass!
   coffee-rails (~> 3.2.1)
   haml-rails
-  hydra_attribute!
+  hydra_attribute (= 0.5.0)
   jquery-rails
   kaminari
   rails (= 3.2.14)
