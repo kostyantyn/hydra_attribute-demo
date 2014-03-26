@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.create(params[:category])
+    @category = Category.create(category_params)
     respond_with(@category)
   end
 
@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category.update_attributes(params[:category])
+    @category.update_attributes(category_params)
     respond_with(@category)
   end
 
@@ -37,5 +37,9 @@ class CategoriesController < ApplicationController
   private
     def find_category
       @category = Category.find(params[:id])
+    end
+
+    def category_params
+      params.require(:category).permit!
     end
 end

@@ -1,27 +1,21 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.16'
+gem 'rails', '4.0.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 
+gem 'sass-rails',   '~> 4.0.2'
+gem 'coffee-rails', '~> 4.0.1'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+gem 'therubyracer', :platforms => :ruby
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'uglifier', '~> 2.5.0'
 
 gem 'jquery-rails'
-gem 'hydra_attribute', '0.5.0'
+gem 'hydra_attribute', github: 'kostyantyn/hydra_attribute', branch: 'rails4'
 gem 'haml-rails'
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: 'master'
 gem 'kaminari'
